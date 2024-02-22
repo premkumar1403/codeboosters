@@ -1,0 +1,61 @@
+ .card{
+        background-color:#020215;
+        display: flex;
+        flex-direction: row;
+        left: 0;
+        bottom: 0;
+        position: fixed;
+        width: 100%;
+        text-decoration: none;
+        justify-content: space-between;
+        padding: 5px;
+        margin-top: 498px;
+    }
+    .first,.second,.third{
+         color: white;
+         font-family: Arial, Helvetica, sans-serif;
+         font-weight: 100px;
+          list-style: none;
+          
+    }
+    .fourth{
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+         font-weight: 100px;
+          list-style: none;
+    }
+    .email{
+       display: flex;
+       flex-direction: row;
+       list-style: none;
+       gap: 10px;
+       margin-left: -40px;
+
+    }
+    .socialmedia{
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        gap: 10px;
+        margin-left:-40px;
+    }
+    ul li{
+        margin-bottom: 10px;
+    }
+    .button{
+        background-color: white;
+        color: black;
+        padding: 12px;
+        border-radius: 5px;
+}
+.input{
+    background-color:black ;
+    padding: 12px;
+     color: white;
+    border-radius: 5px;
+    border-color: blue;
+}
+input::placeholder{
+    color: white;
+    
+}

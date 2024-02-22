@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captcha generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="captcha.css">
+    
+</head>
+<body onload="generate()">
+<div class="outcard">
+     <div class="incard">
+          <div class="inputs">
+           <h1 style="font-family: Arial, Helvetica, sans-serif;">Captcha Generator</h1> 
+           <div id="firstin" >
+           <span id="incontent"></span>
+           <button onclick="generate()" id="gen" style="background-color: blueviolet;opacity: 0.8px; border:none; border-radius: 5px;position: fixed; margin-left: 200px;margin-top: 0px; padding: 8px;"><i class="fa fa-refresh"aria-hidden="false" style="color: white;font-size: 25px;"></i></button>
+           </div>
+           <p class="input"><input id="match" placeholder="Enter Captcha" style="height: 40px;width: 250px"></p>
+           <p class="input"><button onclick="verify()" id="button" type="submit" style="height: 40px;width: 260px;">Submit Captcha</button></p>
+           </div>
+     </div>
+<p id="pop" style="font-size: x-large; margin-top: 30px; margin-left: 600px; color: white; text-align: justify;font-family: Arial, Helvetica, sans-serif"></p>
+</div>
+<script>
+     var store=document.getElementById("incontent")
+     var p=document.getElementById("pop")
+function generate(){
+   const randchar="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvxyz0123456789"
+   let captcha="";
+   for(let i=1;i<6;i++){
+     captcha+=randchar.charAt(Math.floor(Math.random()*randchar.length))
+     }
+     store.innerHTML=captcha;
+     p.style.display="none"
+}
+
+function verify(){
+    var check = document.getElementById("match")
+    var submit = document.getElementById("button")
+    if(check.value==store.innerHTML){
+    document.getElementById("pop").innerHTML="Captcha Matched Successfully"
+     }
+    else{
+    document.getElementById("pop").innerHTML="Please Check Your Captcha!"
+    generate()
+     }
+    p.style.display="block"
+   
+}
+</script>
+</body>
+</html>
